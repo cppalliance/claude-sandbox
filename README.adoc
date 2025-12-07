@@ -1,0 +1,113 @@
+= Claude Sandbox
+:toc: left
+:toclevels: 2
+:source-highlighter: pygments
+
+== Overview
+
+The Claude Sandbox repository is a testing and demonstration environment for the https://github.com/anthropics/claude-code-action[Claude Code GitHub Action]. This repository serves as a workspace for experimenting with Claude's automated code assistance capabilities within GitHub Issues and Pull Requests.
+
+== Purpose
+
+This sandbox enables:
+
+* Testing Claude Code integration with GitHub workflows
+* Demonstrating Claude's ability to assist with software development tasks
+* Exploring automated code review and implementation features
+* Validating Claude Code Action configurations
+
+== Repository Structure
+
+The repository maintains a minimal structure focused on Claude Code integration:
+
+----
+.
+├── .github/
+│   └── workflows/
+│       └── claude.yml         # Claude Code GitHub Action workflow
+├── CLAUDE.md                  # Coding standards and documentation guidelines
+└── README.adoc                # This file
+----
+
+== Claude Code Integration
+
+This repository uses the Claude Code GitHub Action to enable AI-assisted development. Claude can be triggered by mentioning `@claude` in:
+
+* Issue comments
+* Pull request comments
+* Pull request review comments
+* Issue descriptions
+
+=== Workflow Configuration
+
+The Claude Code workflow (`.github/workflows/claude.yml`) is configured with:
+
+* Automatic triggering on `@claude` mentions
+* Write permissions for contents, pull requests, and issues
+* Read permissions for GitHub Actions (CI results)
+
+== Development Guidelines
+
+=== Code Style
+
+This repository follows Boost C++ Libraries conventions as documented in `CLAUDE.md`:
+
+* *Language*: C++11 unless otherwise specified
+* *Naming*: snake_case (Boost C++ Libraries style)
+* *Indentation*: 4 spaces, no tabs
+* *Braces*: On their own line for classes and functions
+* *Encapsulation*: Symbols in "detail" namespaces are never public
+
+=== Project Structure
+
+* *Public headers*: `include/` directory
+* *Library implementation*: `src/` directory
+* *Documentation*: Javadoc style following Boost conventions
+
+=== Documentation Standards
+
+Function and class documentation follows Boost Javadoc style:
+
+* Brief descriptions start on first line after `\/**`
+* Functions returning values: brief starts with "Return"
+* Use `@param` for function parameters
+* Use `@tparam` for template parameters (except variadic args and deduced types)
+* Use `@return`, `@pre`, `@post`, `@throws`, `@note`, `@see` as appropriate
+* Use `@code` / `@endcode` for examples
+
+== Usage
+
+To interact with Claude in this repository:
+
+[source,text]
+----
+@claude <your request>
+----
+
+Example requests:
+
+* "@claude Review this code for potential issues"
+* "@claude Implement a function to calculate buffer size"
+* "@claude Create unit tests for the new feature"
+* "@claude Explain how this algorithm works"
+
+== Organization
+
+This repository is maintained by the https://cppalliance.org[C++ Alliance], an organization dedicated to supporting and advancing the C++ programming language and its ecosystem.
+
+== License
+
+[NOTE]
+====
+License information to be added based on project requirements.
+====
+
+== Contributing
+
+This is a sandbox repository for testing purposes. For information about contributing to C++ Alliance projects, please visit https://cppalliance.org.
+
+== Resources
+
+* https://github.com/anthropics/claude-code-action[Claude Code GitHub Action]
+* https://www.boost.org/development/requirements.html[Boost C++ Libraries Requirements]
+* https://cppalliance.org[C++ Alliance]
