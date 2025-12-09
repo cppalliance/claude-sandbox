@@ -30,6 +30,9 @@ jobs:
         with:
           fetch-depth: 1
 
+      - name: Install Claude CLI
+        run: npm install -g @anthropic-ai/claude-code
+
       - name: Run Claude Code
         id: claude
         uses: anthropics/claude-code-action@v1
@@ -37,6 +40,8 @@ jobs:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           additional_permissions: |
             actions: read
+          show_full_output: true
+          path_to_claude_code_executable: claude
 
           # Optional: Customize the trigger phrase (default: @claude)
           # trigger_phrase: "/claude"
