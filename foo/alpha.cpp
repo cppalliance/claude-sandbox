@@ -1,2 +1,2 @@
-// alpha.cpp in foo (new)
-int foo_value() { return 1; }
+// alpha.cpp in foo (new after rename)
+int foo_value_new() { return 10; }
